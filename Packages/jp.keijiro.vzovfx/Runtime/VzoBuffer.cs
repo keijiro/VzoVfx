@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace VzoVfx {
+namespace Vzo.Vfx {
 
-public sealed class VzoNoteBuffer : MonoBehaviour
+public sealed class VzoBuffer : MonoBehaviour
 {
     #region Editable properties
 
@@ -17,7 +17,7 @@ public sealed class VzoNoteBuffer : MonoBehaviour
 
     #region Public properties
 
-    public GraphicsBuffer NoteBuffer => _buffer;
+    public GraphicsBuffer GraphicsBuffer => _buffer;
 
     #endregion
 
@@ -93,4 +93,4 @@ public sealed class VzoNoteBuffer : MonoBehaviour
     #endregion
 }
 
-} // namespace VzoVfx
+} // namespace Vzo.Vfx

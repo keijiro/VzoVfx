@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace VzoVfx {
+namespace Vzo.Vfx {
 
 [CreateAssetMenu(menuName = "VZO Config")]
 public sealed class VzoConfig : ScriptableObject
@@ -10,4 +10,4 @@ public sealed class VzoConfig : ScriptableObject
     public int UdpPort => _udpPort;
 }
 
-} // namespace VzoVfx
+} // namespace Vzo.Vfx

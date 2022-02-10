@@ -87,10 +87,18 @@
     },
     "jp.keijiro.osc-jack": {
       "version": "1.0.3",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.vzovfx": {
+      "version": "file:jp.keijiro.vzovfx",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "jp.keijiro.osc-jack": "1.0.3"
+      }
     },
     "com.unity.modules.animation": {
       "version": "1.0.0",

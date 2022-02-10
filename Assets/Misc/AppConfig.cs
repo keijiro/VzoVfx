@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace VzoVfx {
+namespace Vzo.Vfx.Sample {
 
 public sealed class AppConfig : MonoBehaviour
 {
@@ -10,4 +10,4 @@ public sealed class AppConfig : MonoBehaviour
       => Application.targetFrameRate = _targetFrameRate;
 }
 
-} // namespace VzoVfx
+} // namespace Vzo.Vfx.Sample

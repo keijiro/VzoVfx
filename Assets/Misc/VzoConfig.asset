@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b0d5dafd068340ea8050a2b036cd5c3, type: 3}
-  m_Name: Config
+  m_Name: VzoConfig
   m_EditorClassIdentifier: 
   _udpPort: 9000

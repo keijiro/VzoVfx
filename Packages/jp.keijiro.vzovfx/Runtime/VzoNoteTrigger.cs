@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using System.Collections.Generic;
 
-namespace VzoVfx {
+namespace Vzo.Vfx {
 
 public sealed class VzoNoteTrigger : MonoBehaviour
 {
@@ -91,5 +91,4 @@ public sealed class VzoNoteTrigger : MonoBehaviour
     #endregion
 }
 
-} // namespace VzoVfx
-
+} // namespace Vzo.Vfx
