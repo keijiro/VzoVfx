@@ -7,11 +7,11 @@ public sealed class VzoBuffer : MonoBehaviour
 {
     #region Editable properties
 
-    public enum Source { Note, CC }
+    public enum Element { Note, CC }
 
     [SerializeField] VzoConfig _config = null;
-    [SerializeField] Source _source = Source.Note;
-    [SerializeField] int _channel = 0;
+    [SerializeField, Range(0, 255)] int _channel = 0;
+    [SerializeField] Element _element = Element.Note;
 
     #endregion
 
@@ -49,7 +49,7 @@ public sealed class VzoBuffer : MonoBehaviour
     void Start()
     {
         // OSC address prefix
-        var dir = _source == Source.Note ? "note" : "cc";
+        var dir = _element == Element.Note ? "note" : "cc";
         _prefix = $"/{dir}/{_channel}/";
 
         // Graphics buffer allocation
