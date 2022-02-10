@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 981986168}
   - component: {fileID: 981986169}
   m_Layer: 0
-  m_Name: OSC
+  m_Name: Note Buffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 1589922190}
   - component: {fileID: 1589922189}
   m_Layer: 0
-  m_Name: VFX
+  m_Name: Streamlines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
