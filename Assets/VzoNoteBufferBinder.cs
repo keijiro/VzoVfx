@@ -6,7 +6,7 @@ namespace VzoVfx {
 
 [AddComponentMenu("VFX/Property Binders/VZO/Note Buffer Binder")]
 [VFXBinder("VZO/Note Buffer")]
-public sealed class VFXVzoNoteBufferBinder : VFXBinderBase
+public sealed class VzoNoteBufferBinder : VFXBinderBase
 {
     #region VFX Binder Implementation
 
@@ -17,7 +17,7 @@ public sealed class VFXVzoNoteBufferBinder : VFXBinderBase
     [VFXPropertyBinding("UnityEngine.GraphicsBuffer"), SerializeField]
     ExposedProperty _bufferProperty = "NoteBuffer";
 
-    public VzoNoteToBuffer Target = null;
+    public VzoNoteBuffer Target = null;
 
     public override bool IsValid(VisualEffect component)
       => Target != null &&
