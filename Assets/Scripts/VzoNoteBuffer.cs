@@ -7,7 +7,10 @@ public sealed class VzoNoteBuffer : MonoBehaviour
 {
     #region Editable properties
 
+    public enum Source { Note, CC }
+
     [SerializeField] VzoConfig _config = null;
+    [SerializeField] Source _source = Source.Note;
     [SerializeField] int _channel = 0;
 
     #endregion
@@ -20,7 +23,7 @@ public sealed class VzoNoteBuffer : MonoBehaviour
 
     #region Private objects
 
-    Queue<(int pitch, float velocity)> _queue = new Queue<(int, float)>();
+    Queue<(int index, float level)> _queue = new Queue<(int, float)>();
 
     string _prefix;
     GraphicsBuffer _buffer;
@@ -34,9 +37,9 @@ public sealed class VzoNoteBuffer : MonoBehaviour
     {
         // Note that this will be invoked from non-main threads.
         if (!address.StartsWith(_prefix)) return;
-        var velocity = data.GetElementAsFloat(0);
-        var pitch = int.Parse(address.Substring(_prefix.Length));
-        lock (_queue) _queue.Enqueue((pitch, velocity));
+        var index = int.Parse(address.Substring(_prefix.Length));
+        var level = data.GetElementAsFloat(0);
+        lock (_queue) _queue.Enqueue((index, level));
     }
 
     #endregion
@@ -45,8 +48,11 @@ public sealed class VzoNoteBuffer : MonoBehaviour
 
     void Start()
     {
-        // Initialization
-        _prefix = $"/note/{_channel}/";
+        // OSC address prefix
+        var dir = _source == Source.Note ? "note" : "cc";
+        _prefix = $"/{dir}/{_channel}/";
+
+        // Graphics buffer allocation
         _buffer = new GraphicsBuffer
           (GraphicsBuffer.Target.Structured, 128, sizeof(float));
 
@@ -75,8 +81,8 @@ public sealed class VzoNoteBuffer : MonoBehaviour
         {
             while (_queue.Count > 0)
             {
-                var (pitch, velocity) = _queue.Dequeue();
-                _temp[pitch] = velocity;
+                var (index, level) = _queue.Dequeue();
+                _temp[index] = level;
             }
         }
 
