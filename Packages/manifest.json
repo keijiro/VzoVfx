@@ -7,6 +7,7 @@
     }
   ],
   "dependencies": {
-    "com.unity.render-pipelines.high-definition": "12.1.4"
+    "com.unity.render-pipelines.universal": "12.1.4",
+    "com.unity.visualeffectgraph": "12.1.4"
   }
 }
