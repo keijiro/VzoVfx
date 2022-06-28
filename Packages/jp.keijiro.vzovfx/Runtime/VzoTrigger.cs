@@ -12,6 +12,7 @@ public sealed class VzoTrigger : MonoBehaviour
 
     [SerializeField] VzoConfig _config = null;
     [SerializeField] int _channel = 0;
+    [SerializeField] int _eventPerFrame = 1;
     [SerializeField] NoteEvent _noteEvent = null;
 
     #endregion
@@ -59,7 +60,7 @@ public sealed class VzoTrigger : MonoBehaviour
     void Update()
     {
         // Event pump
-        while (_queue.Count > 0)
+        for (var i = 0; i < _eventPerFrame && _queue.Count > 0; i++)
         {
             var (index, level) = (0, 0.0f);
             lock (_queue) { (index, level) = _queue.Dequeue(); }
