@@ -72,7 +72,7 @@
       }
     },
     "jp.keijiro.osc-jack": {
-      "version": "1.0.3",
+      "version": "2.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -101,7 +101,7 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "jp.keijiro.osc-jack": "1.0.3"
+        "jp.keijiro.osc-jack": "2.0.0"
       }
     },
     "com.unity.modules.imgui": {

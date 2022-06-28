@@ -1,12 +1,12 @@
 {
     "author": "Keijiro Takahashi",
-    "dependencies": { "jp.keijiro.osc-jack": "1.0.3" },
+    "dependencies": { "jp.keijiro.osc-jack": "2.0.0" },
     "description": "VZO extensions for VFX Graph",
     "displayName": "VzoVfx",
     "keywords": [ "unity" ],
     "license": "Unlicense",
     "name": "jp.keijiro.vzovfx",
-    "unity": "2021.2",
+    "unity": "2021.3",
     "unityRelease": "0f1",
-    "version": "0.0.1"
+    "version": "1.0.0"
 }
